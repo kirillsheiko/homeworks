@@ -1,7 +1,70 @@
-.someClass {
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". . ."
+    ". container ."
+    ". . .";
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 30px;
+    grid-template-rows: 2fr 1fr;
+    gap: 2px 2px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "input input input button counter"
+    "errorMessage errorMessage errorMessage . .";
+    grid-area: container;
+    background-color: #ab6791;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.button {
+    grid-area: button;
+    border-radius: 5px;
+    height: 40px;
+    width: 60px;
+    align-self: center;
+    font-size: x-large;
 
 }
 
+.counter {
+    grid-area: counter;
+    align-self: center;
+    font-size: 40px;
+}
+
+.errorMessage {
+    grid-area: errorMessage;
+    margin-left: 5px;
+
+}
+
+
+.someClass {
+    grid-area: input;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 2px;
+    align-self: center;
+    height: 43px;
+    font-size: xx-large;
+}
+
 .error {
-    border: 1px solid red;
+    grid-area: input;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 2px;
+    align-self: center;
+    height: 43px;
+    font-size: xx-large;
 }
