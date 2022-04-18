@@ -1,0 +1,54 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+            ". . ."
+            ". message ."
+            ". . .";
+}
+.message {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, minmax(100px, 2fr));
+    grid-gap: 2px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". error error error ."
+    "errorMessage errorMessage errorMessage errorMessage errorMessage"
+    ". button button button .";
+    grid-area: message;
+    background-color: rgba(55,117,179,0.28);
+    /*border: 5px solid rgba(250, 134, 134, 0.73);*/
+    border-radius: 10px;
+    text-align: center;
+    font-family: "Rage Italic";
+    font-size: x-large;
+}
+.error {
+    grid-area: error;
+    align-self: center;
+    font-size: xxx-large;
+}
+.errorMessage {
+    grid-area: errorMessage;
+
+}
+.button {
+    grid-area: button;
+    align-self: center;
+    border: none;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(250, 134, 134, 0.73);
+    color: dimgrey;
+    font-family: "Rage Italic";
+    font-size: x-large;
+    transition: all 1s ease;
+}
+button:hover {
+    background: white;
+    color: #FA8686BA;
+    box-shadow: inset 0 0 0 3px #FA8686BA;
+}
